@@ -1,5 +1,5 @@
 import Router from './static/router';
 
-export const Hello: React.FC = () => <Router />;
+export const Hello2: React.FC = () => <Router />;
 
-export default Hello;
+export default Hello2;
