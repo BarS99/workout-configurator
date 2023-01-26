@@ -1,4 +1,4 @@
-import styles from './main-layout.module.scss';
+import styles from './MainLayout.module.scss';
 import { Outlet } from 'react-router-dom';
 
 export const MainLayout = (): JSX.Element => (
