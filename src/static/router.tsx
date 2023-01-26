@@ -1,11 +1,11 @@
 import { useRoutes } from 'react-router-dom';
-import MainLayout from '../application/layouts/main-layout/MainLayout';
-import IndexPage from '../application/pages/IndexPage';
+import MainLayout from '../application/core/layouts/main-layout/MainLayout';
+import IndexPage from '../application/core/pages/index/IndexPage';
 
-const Router = (): React.ReactElement | null => {
-    const router = useRoutes([
+const Router = (): React.ReactElement | null =>
+    useRoutes([
         {
-            path: '/',
+            path: '',
             element: <MainLayout />,
             children: [
                 {
@@ -15,8 +15,5 @@ const Router = (): React.ReactElement | null => {
             ]
         }
     ]);
-
-    return router;
-};
 
 export default Router;
