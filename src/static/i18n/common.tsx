@@ -1,5 +1,6 @@
 const translations = {
-    hello: 'Hello world - first translation'
+    createPlan: 'Create a plan',
+    saveButton: 'Save'
 };
 
 export default translations;
