@@ -1,0 +1,25 @@
+@use '../../../../static/styles/fonts' as fonts;
+
+.crud-card {
+    @include fonts.font-regular;
+
+    display: flex;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    margin: 0 1rem 0 1rem;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    &__text {
+    }
+
+    &__popover-button {
+        font-size: 1.7rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        cursor: pointer;
+    }
+}
