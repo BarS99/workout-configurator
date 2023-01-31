@@ -1,0 +1,77 @@
+@use '../../../../static/styles/breakpoints' as breakpoints;
+
+.container {
+    max-width: 100%;
+    margin-inline: auto;
+    padding: 0 1.5rem;
+
+    &--sm {
+        @include breakpoints.media-breakpoint-up(sm) {
+            max-width: 540px;
+        }
+    }
+
+    &--md {
+        @include breakpoints.media-breakpoint-up(sm) {
+            max-width: 540px;
+        }
+
+        @include breakpoints.media-breakpoint-up(md) {
+            max-width: 720px;
+        }
+    }
+
+    &--lg {
+        @include breakpoints.media-breakpoint-up(sm) {
+            max-width: 540px;
+        }
+
+        @include breakpoints.media-breakpoint-up(md) {
+            max-width: 720px;
+        }
+
+        @include breakpoints.media-breakpoint-up(lg) {
+            max-width: 960px;
+        }
+    }
+
+    &--xl {
+        @include breakpoints.media-breakpoint-up(sm) {
+            max-width: 540px;
+        }
+
+        @include breakpoints.media-breakpoint-up(md) {
+            max-width: 720px;
+        }
+
+        @include breakpoints.media-breakpoint-up(lg) {
+            max-width: 960px;
+        }
+
+        @include breakpoints.media-breakpoint-up(xl) {
+            max-width: 1140px;
+        }
+    }
+
+    &--xxl {
+        @include breakpoints.media-breakpoint-up(sm) {
+            max-width: 540px;
+        }
+
+        @include breakpoints.media-breakpoint-up(md) {
+            max-width: 720px;
+        }
+
+        @include breakpoints.media-breakpoint-up(lg) {
+            max-width: 960px;
+        }
+
+        @include breakpoints.media-breakpoint-up(xl) {
+            max-width: 1140px;
+        }
+
+        @include breakpoints.media-breakpoint-up(xxl) {
+            max-width: 1400px;
+        }
+    }
+}
