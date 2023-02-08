@@ -33,7 +33,7 @@
             }
         ],
         "no-empty-function": "warn",
-        "no-unused-vars": ["warn", { "args": "none" }],
+        "no-unused-vars": 0,
         "quotes": ["error", "single", { "allowTemplateLiterals": true, "avoidEscape": true }],
         "no-use-before-define": "error",
         "max-classes-per-file": "off",
