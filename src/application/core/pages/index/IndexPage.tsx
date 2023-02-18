@@ -9,7 +9,7 @@ const Index = (): JSX.Element => {
         <div>
             <CrudCard>Najelpszy plan</CrudCard>
             <ActionCard>{t('createPlan')}</ActionCard>
-            <Button>Kochać policję</Button>
+            <Button>SAVE</Button>
         </div>
     );
 };
