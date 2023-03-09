@@ -1,16 +1,23 @@
 import { useTranslation } from 'react-i18next';
+import styles from './IndexPage.module.scss';
 import ActionCard from '../../atomic-components/action-card/ActionCard';
-import CrudCard from '../../atomic-components/crud-card/CrudCard';
+import TrainingPlansList from '../../atomic-components/training-plans/training-plans-list/TrainingPlansList';
+// import CrudCard from '../../atomic-components/crud-card/CrudCard';
 import FormModal from '../../atomic-components/form-modal/FormModal';
+import TrainingPlansProvider from '../../atomic-components/training-plans/training-plans-context/TrainingPlansProvider';
 
 const Index = (): JSX.Element => {
     const { t } = useTranslation('common');
+
     return (
-        <div>
-            <CrudCard>Najelpszy plan</CrudCard>
+        <div className={styles['index-page']}>
+            <TrainingPlansProvider>
+                <TrainingPlansList />
+            </TrainingPlansProvider>
             <ActionCard>{t('createPlan')}</ActionCard>
 
-            <FormModal title={t('createPlan')} />
+            {/* <CrudCard>Najelpszy plan</CrudCard> */}
+            <FormModal title={t('newPlanTitle')} />
         </div>
     );
 };

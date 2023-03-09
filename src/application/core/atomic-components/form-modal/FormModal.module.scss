@@ -3,4 +3,8 @@
 .form-modal {
     display: flex;
     flex-direction: column;
+
+    &__inactice {
+        display: none;
+    }
 }
