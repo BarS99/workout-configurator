@@ -6,7 +6,7 @@ import PopOver from '../pop-over/PopOver';
 
 const CrudCard = ({ children }: { children: React.ReactNode }): JSX.Element => {
     const [showPopover, setShowPopover] = useState(false);
-    const togglePopover = () => setShowPopover(!showPopover);
+    const togglePopover = (): void => setShowPopover(!showPopover);
 
     return (
         <div className={styles['crud-card']}>

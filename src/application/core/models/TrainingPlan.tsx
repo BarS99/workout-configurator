@@ -5,6 +5,6 @@ export interface TrainingPlan {
 
 export interface TrainingPlansContextData {
     plansList: TrainingPlan[];
-    addToList: (newObject: { name: string; desc: string }) => void;
+    addToList: (newObject: TrainingPlan) => void;
     clearList: () => void;
 }

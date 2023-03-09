@@ -1,10 +1,11 @@
 import { useContext } from 'react';
 import { useEffect } from 'react';
 import styles from './TrainingPlansList.module.scss';
-import { TrainingPlansContext } from '../training-plans-context/TrainingPlansContext';
+import { TrainingPlansContext } from '../../../store/TrainingPlansContext';
 
 const TrainingPlansList = (): JSX.Element => {
     const { plansList } = useContext(TrainingPlansContext);
+
     useEffect(() => {
         console.log(plansList);
     }, [plansList]);
