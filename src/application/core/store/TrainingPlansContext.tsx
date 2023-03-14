@@ -11,15 +11,18 @@ interface TrainingPlansProps {
     children: React.ReactNode;
 }
 
-export const TrainingPlansProvider = ({ children }: TrainingPlansProps): JSX.Element => {
-    const [plansList, setPlansList] = useState<TrainingPlan[]>([]);
+const TrainingPlansProvider = ({ children }: TrainingPlansProps): JSX.Element => {
+    const localStoragePlans = JSON.parse(localStorage.getItem('plansList') || '[]');
+    const [plansList, setPlansList] = useState<TrainingPlan[]>(localStoragePlans);
 
     const addToList = (newObject: TrainingPlan): void => {
+        localStorage.setItem('plansList', JSON.stringify([...plansList, newObject]));
         setPlansList([...plansList, newObject]);
     };
 
     const clearList = (): void => setPlansList([]);
 
+    // eslint-disable-next-line prettier/prettier
     return (
         <TrainingPlansContext.Provider value={{ plansList, addToList, clearList }}>
             {children}

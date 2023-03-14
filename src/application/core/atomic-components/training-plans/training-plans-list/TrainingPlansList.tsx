@@ -1,14 +1,10 @@
-import { useContext } from 'react';
-import { useEffect } from 'react';
 import styles from './TrainingPlansList.module.scss';
+import { TrainingPlansContextData } from '../../../models/TrainingPlan';
+import { useContext } from 'react';
 import { TrainingPlansContext } from '../../../store/TrainingPlansContext';
 
 const TrainingPlansList = (): JSX.Element => {
-    const { plansList } = useContext(TrainingPlansContext);
-
-    useEffect(() => {
-        console.log(plansList);
-    }, [plansList]);
+    const { plansList } = useContext<TrainingPlansContextData>(TrainingPlansContext);
 
     return (
         <div className={styles['taining-plans-list']}>
