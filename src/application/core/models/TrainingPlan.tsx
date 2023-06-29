@@ -1,6 +1,5 @@
 export interface TrainingPlan {
     name: string;
-    desc: string;
 }
 
 export interface TrainingPlansContextData {

@@ -3,7 +3,7 @@ const translations = {
     saveButton: 'Save',
     newPlanTitle: 'Create a new plan',
     planDescription: 'Describe the plan',
-    planTitle: 'Name'
+    planTitle: 'Plan name'
 };
 
 export default translations;
