@@ -1,6 +1,6 @@
 import { useRoutes } from 'react-router-dom';
 import IndexPage from '../pages/IndexPage';
-import IndexLayout from '../layouts/IndexLayout';
+import IndexLayout from '../layouts/Index/IndexLayout';
 import TrainingPage from '../pages/training/TrainingPage';
 import CreatorPlan from '../pages/creator/CreatorPlan';
 import AnalyticsPage from '../pages/analytics/AnalyticsPage';
