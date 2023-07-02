@@ -1,0 +1,7 @@
+{
+    "exercises": [
+        { "id": 1, "name": "Deadlift" },
+        { "id": 2, "name": "Squats with weight" },
+        { "id": 3, "name": "Bench press" }
+    ]
+}

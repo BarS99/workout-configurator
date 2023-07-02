@@ -30,7 +30,8 @@
         "eject": "react-scripts eject",
         "lint": "eslint **/*.{js,ts,tsx}",
         "lint:fix": "eslint **/*.{js,ts,tsx} --fix",
-        "prettier": "prettier --write **/*.{js,ts,tsx,json,css,scss,html}"
+        "prettier": "prettier --write **/*.{js,ts,tsx,json,css,scss,html}",
+        "json-server": "json-server -p 3010 --watch ./src/assets/db.json"
     },
     "eslintConfig": {
         "extends": [

@@ -1,12 +1,12 @@
 import { useRoutes } from 'react-router-dom';
-import MainLayout from '../application/core/layouts/main-layout/MainLayout';
-import IndexPage from '../application/core/pages/index/IndexPage';
+import IndexPage from '../pages/IndexPage';
+import IndexLayout from '../layouts/IndexLayout';
 
 const Router = (): React.ReactElement | null =>
     useRoutes([
         {
             path: '',
-            element: <MainLayout />,
+            element: <IndexLayout />,
             children: [
                 {
                     path: '',
