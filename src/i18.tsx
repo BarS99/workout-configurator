@@ -1,9 +1,15 @@
-import i18n from 'i18next';
+import i18n, { Resource } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 const resources = {
-    en: {}
-};
+    en: {
+        translation: {
+            footer: {
+                copyright: '© 2023 REP MENTOR Poland. All rights reserved.'
+            }
+        }
+    }
+} as Resource;
 
 i18n.use(initReactI18next) // passes i18n down to react-i18next
     .init({
