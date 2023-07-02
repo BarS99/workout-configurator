@@ -1,3 +1,9 @@
-const IndexLayout = (): JSX.Element => <div>IndexLayout</div>;
+import Header from '../components/Header';
+
+const IndexLayout = (): JSX.Element => (
+    <div>
+        <Header />
+    </div>
+);
 
 export default IndexLayout;
