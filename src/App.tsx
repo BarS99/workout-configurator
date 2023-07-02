@@ -1,4 +1,4 @@
-import Router from './static/router';
+import Router from './assets/router';
 
 export const App: React.FC = () => <Router />;
 
