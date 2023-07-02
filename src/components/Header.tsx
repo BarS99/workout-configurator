@@ -15,6 +15,7 @@ import {
     Tooltip,
     MenuItem
 } from '@mui/material';
+import Logo from './Logo';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -63,7 +64,9 @@ function ResponsiveAppBar(): JSX.Element {
                             color: 'inherit',
                             textDecoration: 'none'
                         }}>
-                        REP MENTOR
+                        <Link to={'/'}>
+                            <Logo />
+                        </Link>
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -118,7 +121,9 @@ function ResponsiveAppBar(): JSX.Element {
                             color: 'inherit',
                             textDecoration: 'none'
                         }}>
-                        REP MENTOR
+                        <Link to={'/'}>
+                            <Logo />
+                        </Link>
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
