@@ -6,9 +6,7 @@ import {
     CardContent,
     Collapse,
     IconButton,
-    IconButtonProps,
     Typography,
-    styled,
     Box,
     CardActions,
     Button
@@ -16,22 +14,10 @@ import {
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-
-interface ExpandMoreProps extends IconButtonProps {
-    expand: boolean;
-}
-
-const ExpandMore = styled((props: ExpandMoreProps) => {
-    const { ...other } = props;
-    return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-    transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-    transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest
-    })
-}));
-
+import { useTranslation } from 'react-i18next';
+import CustomizedMenus from './Popover';
 const HorizontalCard = (): JSX.Element => {
+    const { t } = useTranslation();
     const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = (): void => {
@@ -39,13 +25,13 @@ const HorizontalCard = (): JSX.Element => {
     };
 
     return (
-        <Card sx={{ p: 2 }}>
+        <Card sx={{ p: 2, mb: 2 }}>
             <CardHeader
                 sx={{ p: 0 }}
                 action={
-                    <IconButton aria-label="settings">
-                        <MoreVertIcon />
-                    </IconButton>
+                    <Box>
+                        <CustomizedMenus />
+                    </Box>
                 }
                 title="Push Pull Legs"
                 subheader="September 14, 2016"
@@ -53,10 +39,15 @@ const HorizontalCard = (): JSX.Element => {
 
             <CardActions>
                 <Box component={Button} variant="text" size="small" onClick={handleExpandClick}>
-                    <Typography variant="subtitle2">Show more</Typography>
-                    <ExpandMore sx={{}} expand={expanded} aria-expanded={expanded} aria-label="show more">
-                        <ExpandMoreIcon />
-                    </ExpandMore>
+                    <Typography variant="subtitle2">{t('show more')}</Typography>
+                    <ExpandMoreIcon
+                        style={{
+                            color: 'black',
+                            display: 'flex',
+                            transform: `rotate(${expanded ? '180' : '0'}deg)`,
+                            transition: 'transform 0.3s ease'
+                        }}
+                    />
                 </Box>
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>

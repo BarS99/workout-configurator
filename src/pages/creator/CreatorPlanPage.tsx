@@ -4,6 +4,7 @@ const CreatorPlanPage = (): JSX.Element => {
     return (
         <div>
             <HorizontalCard />
+            <HorizontalCard />
         </div>
     );
 };
