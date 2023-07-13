@@ -6,7 +6,9 @@ const resources = {
         translation: {
             footer: {
                 copyright: '© 2023 REP MENTOR Poland. All rights reserved.'
-            }
+            },
+            common: { showMore: 'Show more', edit: 'Edit', rename: 'Rename', delete: 'Delete' },
+            plan: {}
         }
     }
 } as Resource;

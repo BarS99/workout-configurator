@@ -11,6 +11,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 import FormatShapesRoundedIcon from '@mui/icons-material/FormatShapesRounded';
 import { CrudProps } from './../types/crud';
+import { useTranslation } from 'react-i18next';
 
 const StyledMenu = styled((props: MenuProps) => (
     <Menu
@@ -50,6 +51,7 @@ const StyledMenu = styled((props: MenuProps) => (
 }));
 
 const CrudPopover: React.FC<CrudProps> = ({ handleEdit, handleRename, handleDelete }): JSX.Element => {
+    const { t } = useTranslation();
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>): void => {
@@ -80,15 +82,15 @@ const CrudPopover: React.FC<CrudProps> = ({ handleEdit, handleRename, handleDele
                 onClose={handleClose}>
                 <MenuItem onClick={handleEdit} disableRipple>
                     <EditIcon />
-                    Edit
+                    {t('common.edit')}
                 </MenuItem>
                 <MenuItem onClick={handleRename} disableRipple>
                     <FormatShapesRoundedIcon />
-                    Rename
+                    {t('common.rename')}
                 </MenuItem>
                 <MenuItem onClick={handleDelete} disableRipple>
                     <DeleteRoundedIcon />
-                    Delete
+                    {t('common.delete')}
                 </MenuItem>
             </StyledMenu>
         </Box>

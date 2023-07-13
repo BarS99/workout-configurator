@@ -34,7 +34,7 @@ const HorizontalCard = (): JSX.Element => {
 
             <CardActions>
                 <Box component={Button} variant="text" size="small" onClick={handleExpandClick}>
-                    <Typography variant="subtitle2">{t('show more')}</Typography>
+                    <Typography variant="subtitle2">{t('common.showMore')}</Typography>
                     <ExpandMoreIcon
                         style={{
                             color: 'black',
