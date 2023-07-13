@@ -5,11 +5,13 @@ import Menu, { MenuProps } from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import EditIcon from '@mui/icons-material/Edit';
 
-import { IconButton } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 import FormatShapesRoundedIcon from '@mui/icons-material/FormatShapesRounded';
+import { CrudProps } from './../types/crud';
+
 const StyledMenu = styled((props: MenuProps) => (
     <Menu
         elevation={0}
@@ -47,18 +49,18 @@ const StyledMenu = styled((props: MenuProps) => (
     }
 }));
 
-export default function CustomizedMenus() {
+const CrudPopover: React.FC<CrudProps> = ({ handleEdit, handleRename, handleDelete }): JSX.Element => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
-    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    const handleClick = (event: React.MouseEvent<HTMLElement>): void => {
         setAnchorEl(event.currentTarget);
     };
-    const handleClose = () => {
+    const handleClose = (): void => {
         setAnchorEl(null);
     };
 
     return (
-        <div>
+        <Box>
             <IconButton
                 id="demo-customized-button"
                 aria-label="more"
@@ -76,19 +78,20 @@ export default function CustomizedMenus() {
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}>
-                <MenuItem onClick={handleClose} disableRipple>
+                <MenuItem onClick={handleEdit} disableRipple>
                     <EditIcon />
                     Edit
                 </MenuItem>
-                <MenuItem onClick={handleClose} disableRipple>
+                <MenuItem onClick={handleRename} disableRipple>
                     <FormatShapesRoundedIcon />
                     Rename
                 </MenuItem>
-                <MenuItem onClick={handleClose} disableRipple>
+                <MenuItem onClick={handleDelete} disableRipple>
                     <DeleteRoundedIcon />
                     Delete
                 </MenuItem>
             </StyledMenu>
-        </div>
+        </Box>
     );
-}
+};
+export default CrudPopover;

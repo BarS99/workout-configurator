@@ -1,21 +1,12 @@
 import * as React from 'react';
 
-import {
-    Card,
-    CardHeader,
-    CardContent,
-    Collapse,
-    IconButton,
-    Typography,
-    Box,
-    CardActions,
-    Button
-} from '@mui/material/';
+import { Card, CardHeader, CardContent, Collapse, Typography, Box, CardActions, Button } from '@mui/material/';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+
 import { useTranslation } from 'react-i18next';
-import CustomizedMenus from './Popover';
+import CrudPopover from './CrudPopover';
+
 const HorizontalCard = (): JSX.Element => {
     const { t } = useTranslation();
     const [expanded, setExpanded] = React.useState(false);
@@ -24,13 +15,17 @@ const HorizontalCard = (): JSX.Element => {
         setExpanded(!expanded);
     };
 
+    const handleEdit = (): void => {};
+    const handleRename = (): void => {};
+    const handleDelete = (): void => {};
+
     return (
         <Card sx={{ p: 2, mb: 2 }}>
             <CardHeader
                 sx={{ p: 0 }}
                 action={
                     <Box>
-                        <CustomizedMenus />
+                        <CrudPopover handleEdit={handleEdit} handleRename={handleRename} handleDelete={handleDelete} />
                     </Box>
                 }
                 title="Push Pull Legs"
