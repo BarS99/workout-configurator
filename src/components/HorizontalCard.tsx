@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useDispatch } from 'react-redux';
+import { deletePlan } from '../store/reducers/trainingPlanReducer';
 
 import { Card, CardHeader, CardContent, Collapse, Typography, Box, CardActions, Button } from '@mui/material/';
 
@@ -6,9 +8,12 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import { useTranslation } from 'react-i18next';
 import CrudPopover from './CrudPopover';
+import { TrainingPlan } from '../types/training-plan';
 
-const HorizontalCard = (): JSX.Element => {
+const HorizontalCard = (props: TrainingPlan): JSX.Element => {
+    const { id, name, desc, days } = props;
     const { t } = useTranslation();
+    const dispatch = useDispatch();
     const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = (): void => {
@@ -17,6 +22,9 @@ const HorizontalCard = (): JSX.Element => {
 
     const handleEdit = (): void => {};
     const handleRename = (): void => {};
+    // const handleDelete = (event: React.MouseEvent<unknown>, id: string): void => {
+    //     dispatch(deletePlan(id));
+    // };
     const handleDelete = (): void => {};
 
     return (
@@ -28,8 +36,8 @@ const HorizontalCard = (): JSX.Element => {
                         <CrudPopover handleEdit={handleEdit} handleRename={handleRename} handleDelete={handleDelete} />
                     </Box>
                 }
-                title="Push Pull Legs"
-                subheader="September 14, 2016"
+                title={name}
+                subheader=""
             />
 
             <CardActions>
@@ -47,9 +55,7 @@ const HorizontalCard = (): JSX.Element => {
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                 <CardContent>
-                    <Typography>
-                        Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes.
-                    </Typography>
+                    <Typography>{desc}</Typography>
                 </CardContent>
             </Collapse>
         </Card>
