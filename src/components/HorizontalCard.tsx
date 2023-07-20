@@ -21,11 +21,9 @@ const HorizontalCard = (props: TrainingPlan): JSX.Element => {
     };
 
     const handleEdit = (): void => {};
-    const handleRename = (): void => {};
-    // const handleDelete = (event: React.MouseEvent<unknown>, id: string): void => {
-    //     dispatch(deletePlan(id));
-    // };
-    const handleDelete = (): void => {};
+    const handleDelete = (): void => {
+        dispatch(deletePlan(props));
+    };
 
     return (
         <Card sx={{ p: 2, mb: 2 }}>
@@ -33,7 +31,7 @@ const HorizontalCard = (props: TrainingPlan): JSX.Element => {
                 sx={{ p: 0 }}
                 action={
                     <Box>
-                        <CrudPopover handleEdit={handleEdit} handleRename={handleRename} handleDelete={handleDelete} />
+                        <CrudPopover handleEdit={handleEdit} handleDelete={handleDelete} />
                     </Box>
                 }
                 title={name}

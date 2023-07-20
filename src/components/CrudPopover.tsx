@@ -80,18 +80,26 @@ const CrudPopover: React.FC<CrudProps> = ({ handleEdit, handleRename, handleDele
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}>
-                <MenuItem onClick={handleEdit} disableRipple>
-                    <EditIcon />
-                    {t('common.edit')}
-                </MenuItem>
-                <MenuItem onClick={handleRename} disableRipple>
-                    <FormatShapesRoundedIcon />
-                    {t('common.rename')}
-                </MenuItem>
-                <MenuItem onClick={handleDelete} disableRipple>
-                    <DeleteRoundedIcon />
-                    {t('common.delete')}
-                </MenuItem>
+                {handleEdit && (
+                    <MenuItem onClick={handleEdit} disableRipple>
+                        <EditIcon />
+                        {t('common.edit')}
+                    </MenuItem>
+                )}
+
+                {handleRename && (
+                    <MenuItem onClick={handleRename} disableRipple>
+                        <FormatShapesRoundedIcon />
+                        {t('common.rename')}
+                    </MenuItem>
+                )}
+
+                {handleDelete && (
+                    <MenuItem onClick={handleDelete} disableRipple>
+                        <DeleteRoundedIcon />
+                        {t('common.delete')}
+                    </MenuItem>
+                )}
             </StyledMenu>
         </Box>
     );

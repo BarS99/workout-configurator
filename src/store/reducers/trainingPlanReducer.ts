@@ -17,9 +17,9 @@ const TrainingPlanSlice = createSlice({
         createPlan(state, action: PayloadAction<TrainingPlan>) {
             state.TrainingPlans = [action.payload, ...state.TrainingPlans];
         },
-        // renamePlan(state, action: PayloadAction<TrainingPlan>) {},
+
         deletePlan(state, action: PayloadAction<TrainingPlan>) {
-            state.TrainingPlans.filter((plan) => plan.id !== action.payload.id);
+            state.TrainingPlans = state.TrainingPlans.filter((plan) => plan.id !== action.payload.id);
         }
     }
 });
