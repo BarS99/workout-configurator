@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TrainingPlan } from './../../types/training-plan';
-import { examplePlans } from '../dummy-content';
+import dbData from '../../assets/db.json';
 
 export interface TrainingPlanState {
     TrainingPlans: TrainingPlan[];
 }
 
 const initialState: TrainingPlanState = {
-    TrainingPlans: examplePlans
+    TrainingPlans: dbData.plans
 };
 
 const TrainingPlanSlice = createSlice({

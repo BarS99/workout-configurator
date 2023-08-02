@@ -20,6 +20,10 @@ const Router = (): React.ReactElement | null =>
                     element: <TrainingPage />
                 },
                 {
+                    path: '/creator/:id',
+                    element: <CreatorPlanPage />
+                },
+                {
                     path: '/creator',
                     element: <CreatorPlanPage />
                 },

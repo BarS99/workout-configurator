@@ -3,5 +3,9 @@
         { "id": 1, "name": "Deadlift" },
         { "id": 2, "name": "Squats with weight" },
         { "id": 3, "name": "Bench press" }
-    ]
+    ],
+    "plans":[
+        { "id": "1", "name": "Push pull", "desc": "Najlepszy plan", "days": [] },
+        { "id": "2", "name": "FBW", "desc": "Drugi najlepszy plan", "days": [] }
+    ]    
 }
