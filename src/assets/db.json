@@ -7,5 +7,9 @@
     "plans":[
         { "id": "1", "name": "Push pull", "desc": "Najlepszy plan", "days": [] },
         { "id": "2", "name": "FBW", "desc": "Drugi najlepszy plan", "days": [] }
-    ]    
+    ],
+    "planDays":[
+        { "id": "12", "planId": "1", "name": "Day A", "desc": "Plan A jest pod klate", "exercises":[] },
+        { "id": "12", "planId": "2", "name": "Day C", "desc": "Plan C jest pod bica", "exercises":[] }
+    ]  
 }

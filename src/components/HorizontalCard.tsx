@@ -3,12 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { deletePlan } from '../store/reducers/trainingPlanReducer';
 
-import { Card, CardHeader, CardContent, Collapse, Typography, Box, CardActions, Button } from '@mui/material/';
+import { Card, CardContent, Collapse, Typography, Box, CardActions, Button } from '@mui/material/';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import CrudPopover from './CrudPopover';
 import { TrainingPlan } from '../types/training-plan';
-import { hover } from '@testing-library/user-event/dist/hover';
+
 import { Link } from 'react-router-dom';
 
 const HorizontalCard = (props: TrainingPlan): JSX.Element => {
@@ -31,45 +31,50 @@ const HorizontalCard = (props: TrainingPlan): JSX.Element => {
 
     const cardStyle = {
         p: 2,
-        mb: 2,
-        '  &:hover': { backgroundColor: '#eee', cursor: 'pointer' }
+        mb: 2
+    };
+    const cardHeaderStyle = {
+        display: 'flex',
+        justifyContent: 'space-between'
+    };
+    const cardTitleStyle = {
+        p: 1,
+        '  &:hover': { backgroundColor: '#eee', cursor: 'pointer', borderRadius: '5px' }
     };
 
     return (
-        <Link to={'/creator/' + id}>
-            <Card sx={cardStyle}>
-                <CardHeader
-                    sx={{ p: 0 }}
-                    action={
-                        <Box>
-                            <CrudPopover handleEdit={handleEdit} handleDelete={handleDelete} />
-                        </Box>
-                    }
-                    title={name}
-                    subheader=""
-                />
+        <Card sx={cardStyle}>
+            <Box sx={cardHeaderStyle}>
+                <Link to={'/creator/' + id}>
+                    <Typography variant="h5" sx={cardTitleStyle}>
+                        {name}
+                    </Typography>
+                </Link>
+                <Box>
+                    <CrudPopover handleEdit={handleEdit} handleDelete={handleDelete} />
+                </Box>
+            </Box>
 
-                <CardActions>
-                    <Box component={Button} variant="text" size="small" onClick={handleExpandClick}>
-                        <Typography variant="subtitle2">{t('common.showMore')}</Typography>
-                        <ExpandMoreIcon
-                            style={{
-                                zIndex: '10',
-                                color: 'black',
-                                display: 'flex',
-                                transform: `rotate(${expanded ? '180' : '0'}deg)`,
-                                transition: 'transform 0.3s ease'
-                            }}
-                        />
-                    </Box>
-                </CardActions>
-                <Collapse in={expanded} timeout="auto" unmountOnExit>
-                    <CardContent>
-                        <Typography>{desc}</Typography>
-                    </CardContent>
-                </Collapse>
-            </Card>
-        </Link>
+            <CardActions>
+                <Box component={Button} variant="text" size="small" onClick={handleExpandClick}>
+                    <Typography variant="subtitle2">{t('common.showMore')}</Typography>
+                    <ExpandMoreIcon
+                        style={{
+                            zIndex: '10',
+                            color: 'black',
+                            display: 'flex',
+                            transform: `rotate(${expanded ? '180' : '0'}deg)`,
+                            transition: 'transform 0.3s ease'
+                        }}
+                    />
+                </Box>
+            </CardActions>
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                    <Typography>{desc}</Typography>
+                </CardContent>
+            </Collapse>
+        </Card>
     );
 };
 
