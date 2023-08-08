@@ -1,7 +1,6 @@
 import HorizontalCard from '../../components/HorizontalCard';
 import { useSelector } from 'react-redux';
 import { TrainingPlan } from '../../types/training-plan';
-import { TrainingPlanState } from '../../store/reducers/trainingPlanReducer';
 import { Box } from '@mui/material';
 import { RootState } from '../../store/rootReducer';
 

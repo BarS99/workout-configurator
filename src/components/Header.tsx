@@ -107,8 +107,8 @@ function ResponsiveAppBar(): JSX.Element {
                     <Typography
                         variant="h5"
                         noWrap
-                        component="a"
-                        href=""
+                        component={Link}
+                        to="/"
                         sx={{
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
@@ -119,9 +119,7 @@ function ResponsiveAppBar(): JSX.Element {
                             color: 'inherit',
                             textDecoration: 'none'
                         }}>
-                        <Link to={'/'}>
-                            <Logo />
-                        </Link>
+                        <Logo />
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (

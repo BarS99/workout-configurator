@@ -8,7 +8,9 @@ const resources = {
                 copyright: '© 2023 REP MENTOR Poland. All rights reserved.'
             },
             common: { showMore: 'Show more', edit: 'Edit', rename: 'Rename', delete: 'Delete' },
-            plan: {}
+            plan: {
+                createNewTrainingPlan: 'Create New Training Plan...'
+            }
         }
     }
 } as Resource;

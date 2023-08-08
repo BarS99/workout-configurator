@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { deletePlan } from '../store/reducers/trainingPlanReducer';
 
 import { Card, CardContent, Collapse, Typography, Box, CardActions, Button } from '@mui/material/';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import CrudPopover from './CrudPopover';
-import { TrainingPlan } from '../types/training-plan';
 
 import { Link } from 'react-router-dom';
+import { deletePlan } from '../store/reducers/trainingPlanReducer';
+import { TrainingPlan } from '../types/training-plan';
 
 const HorizontalCard = (props: TrainingPlan): JSX.Element => {
     const { id, name, desc, days } = props;
