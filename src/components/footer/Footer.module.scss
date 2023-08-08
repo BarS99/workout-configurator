@@ -1,9 +1,0 @@
-@use '/src/assets/styles/vars.scss' as vars;
-
-.footer {
-    background-color: vars.$primary;
-    padding: vars.$main-unit * 2 0;
-    color: vars.$text-base;
-    text-align: center;
-    font-size: 0.75rem;
-}
