@@ -1,8 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import trainingPlanReducer from './reducers/trainingPlanReducer';
-
+import rootReducer from './rootReducer';
 const store = configureStore({
-    reducer: trainingPlanReducer
+    reducer: rootReducer
 });
 
 export default store;

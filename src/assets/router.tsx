@@ -4,6 +4,7 @@ import IndexLayout from '../layouts/Index/IndexLayout';
 import TrainingPage from '../pages/training/TrainingPage';
 import CreatorPlanPage from '../pages/creator/CreatorPlanPage';
 import AnalyticsPage from '../pages/analytics/AnalyticsPage';
+import CreatorDayPage from '../pages/creator/CreatorDayPage';
 
 const Router = (): React.ReactElement | null =>
     useRoutes([
@@ -21,7 +22,7 @@ const Router = (): React.ReactElement | null =>
                 },
                 {
                     path: '/creator/:id',
-                    element: <CreatorPlanPage />
+                    element: <CreatorDayPage />
                 },
                 {
                     path: '/creator',
